@@ -1,0 +1,21 @@
+
+
+services:
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+    - "6379:6379"
+    command: redis-server --save 60 1 --loglevel warning
+
+
+  worker:
+    build: .
+    command: celery -A src worker --loglevel=info
+    volumes:
+      - ./src:/usr/src/app
+    depends_on:
+      - redis
+      
+
