@@ -1,0 +1,14 @@
+
+Django==4.2
+
+djangorestframework==3.15
+djoser==2.2
+django-cors-headers
+
+django-notifs==4.0.0
+channels==4.2.0
+
+redis==5.2.1
+channels_redis==4.2.1
+celery==5.4.0 
+django-redis==5.4.0
